@@ -15,8 +15,8 @@ $OutputLOG=$PathFolder+"audit.log"
 $Operation="UserLoggedIn,UserLoginFailed,TeamsSessionStarted,MailboxLogin,FileAccessed,FileAccessedExtended,FileDeleted,FileMoved,FileRenamed,FileMalwareDetected,FolderDeleted,FolderDeletedFirstStageRecycleBin,FolderDeletedSecondStageRecycleBin,FolderMoved,FolderRenamed,TeamsSessionStarted,FileDeletedFirstStageRecycleBin, FileDeletedSecondStageRecycleBin, FileCopied, DocumentSensitivityMismatchDetected,SecureLinkUsed, FileMalwareDetected, PermissionLevelAdded, AccessRequestCreated, AccessRequestAccepted,AccessRequestDenied,AnonymousLinkUsed, SharingSet,SharingInvitationAccepted, SharingInvitationBlocked, AccessRequestCreated, AnonymousLinkCreated,AnonymousLinkUpdated, SharingInvitationCreated,AnonymousLinkCreated, SecureLinkCreated,AccessRequestDenied, FileSyncDownloadedFull, PermissionLevelModified,PermissionLevelAdded,AddedToSecureLink,PermissionLevelsInheritanceBroken,SharingInheritanceBroken, AddMailboxPermissions, HardDelete, Delete user, Reset user password, Set force change user password"
 
 # Authentication section
-$AccountAdmin="ADMIN"
-[string][ValidateNotNullOrEmpty()] $Password = "PASSWORD"
+$AccountAdmin="CCOUNT ADMINISTRATOR O365"
+[string][ValidateNotNullOrEmpty()] $Password = "PASSWORD ACCOUNT"
 $SecuredPassword = ConvertTo-SecureString -String $Password -AsPlainText -Force
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $AccountAdmin, $SecuredPassword
 
