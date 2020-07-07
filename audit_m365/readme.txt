@@ -1,3 +1,4 @@
+##### POWERSHELL #####
 Compilare/modificare le seguenti variabili all'interno del file getaudit.ps1
 #Variables
 $TimeZone = Get-Date -UFormat '%Z' <-- !! NON MODIFICARE !! -->
@@ -10,6 +11,25 @@ $Operation="UserLoggedIn,UserLoginFailed,TeamsSessionStarted,MailboxLogin,FileAc
 # Authentication section
 $AccountAdmin="ACCOUNT ADMINISTRATOR O365"
 [string][ValidateNotNullOrEmpty()] $Password = "PASSWORD ACCOUNT"
+
+
+##### ALIENVAULT #####
+Andare nel file di configurazione (/var/ossec/etc/ossec.conf) inserire:
+<ossec_config>
+    <!-- rules global entry -->
+    <rules>
+      <decoder>alienvault/decoders/decoder.xml</decoder>
+      <decoder>alienvault/decoders/local_decoder.xml</decoder>
+    </rules>
+  </ossec_config>
+  <ossec_config>
+    <!-- rules global entry -->
+    <rules>
+<include>alienvault/rules/local_rules.xml</include>
+ </rules>
+  </ossec_config>
+
+o in alternatica via web (environment -> detection -> config) [necessario restart da hids control]
 
 All'interno del local decoder (/var/ossec/alienvault/decoders/local_decoder.xml) inserire:
 <decoder name="o365">
@@ -25,7 +45,6 @@ All'interno delle local rules (/var/ossec/alienvault/ruless/local_rules.xml) ins
     <decoded_as>o365</decoded_as>
     <description>Office365 audit messages.</description>
   </rule>
-<!-- "office365","21/05/2020 19:28:48","supporto@backloop.biz","185.126.143.40","MailboxLogin","Succeeded","Exchange" -->
   <rule id="100004" level="3">
    <if_sid>100003,100002</if_sid>
     <match>"AzureActiveDirectory"</match>
