@@ -1,5 +1,5 @@
-INSERT INTO `plugin` VALUES ('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,1,'Office365','HIDS Office365',0,NULL),
-('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,100004,NULL,1,1,'AzureAD Log',0.0000,216,2),
+INSERT INTO `plugin` VALUES ('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,1,'Office365','HIDS Office365',0,NULL);
+INSERT INTO `plugin_sid` VALUES ('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,100004,NULL,1,1,'AzureAD Log',0.0000,216,2),
 ('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,100005,NULL,1,1,'Office365 AzureAD Logon success',0.0000,24,2),
 ('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,100006,NULL,3,3,'Office365 AzureAD Logon failed',0.0000,25,2),
 ('\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',9010,100008,NULL,1,1,'Office365 AzureAD Add User',0.0000,86,2),
