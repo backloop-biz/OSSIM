@@ -37,3 +37,10 @@ Copiare il file local_decoder.xml in /var/ossec/alienvault/decoders/
 Copiare il file local_rules.xml in /var/ossec/alienvault/ruless/
 
 Copiare il file ossec-single-line.cfg.local in /etc/ossim/agent/plugins/
+
+
+
+### SQL ###
+caricare il file insert.sql (va bene anche nella root di OSSIM) e aggiornare il database con il seguente commando:
+
+cat insert.sql | ossim-db
