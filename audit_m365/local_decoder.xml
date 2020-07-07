@@ -1,0 +1,7 @@
+<decoder name="o365">
+<prematch>"O365_Audit_Log"</prematch>
+<regex>"O365_Audit_Log","\S+ \S+","(\S+)","(\S+)"</regex>
+<order>user,srcip</order>
+<fts>user</fts>
+</decoder>
+
